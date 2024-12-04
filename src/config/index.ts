@@ -1,0 +1,1 @@
+export { appAxios } from "./axiosConfig";
