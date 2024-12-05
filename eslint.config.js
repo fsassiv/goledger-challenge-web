@@ -22,7 +22,7 @@ module.exports = [
       ...typescriptPlugin.configs.recommended.rules,
       ...prettierPlugin.configs.recommended.rules,
       // Custom rules
-      "jsx-quotes": [1, "prefer-single"],
+      "jsx-quotes": [0, "prefer-single"],
       "@typescript-eslint/interface-name-prefix": "off",
       "@typescript-eslint/explicit-function-return-type": "off",
       "@typescript-eslint/explicit-module-boundary-types": "off",
