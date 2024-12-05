@@ -10,8 +10,8 @@ export const appAxios = axios.create({
   timeout: 1000,
   headers: {
     Authorization: `Basic ${token}`,
-    'Content-Type': 'application/json'
-  }
+    'Content-Type': 'application/json',
+  },
 });
 
 export enum API_ENDPOINTS {
@@ -23,5 +23,5 @@ export enum API_ENDPOINTS {
   READ_ASSET = '/query/readAsset',
   CREATE_ASSET = '/invoke/createAsset',
   UPDATE_ASSET = '/invoke/updateAsset',
-  DELETE_ASSET = '/invoke/deleteAsset'
+  DELETE_ASSET = '/invoke/deleteAsset',
 }
