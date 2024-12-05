@@ -1,1 +1,1 @@
-export { appAxios } from "./axiosConfig";
+export { API_ENDPOINTS, appAxios } from './axiosConfig';

@@ -1,19 +1,11 @@
-import deepmerge from "deepmerge";
-import { AbstractIntlMessages } from "next-intl";
-import { getRequestConfig } from "next-intl/server";
-import { notFound } from "next/navigation";
+import deepmerge from 'deepmerge';
+import { AbstractIntlMessages } from 'next-intl';
+import { getRequestConfig } from 'next-intl/server';
+import { notFound } from 'next/navigation';
 
-export const locales = ["pt-BR", "en-US"];
-export const defaultLocale = "pt-BR";
-const sections = [
-  "errors",
-  "filterBar",
-  "forms",
-  "mainMenu",
-  "navBar",
-  "pages",
-  "utils",
-];
+export const locales = ['pt-BR', 'en-US'];
+export const defaultLocale = 'pt-BR';
+const sections = ['default'];
 
 export default getRequestConfig(async ({ locale }) => {
   // Validate that the incoming `locale` parameter is valid
@@ -25,12 +17,12 @@ export default getRequestConfig(async ({ locale }) => {
     try {
       temp.default = {
         ...temp.default,
-        ...(await import(`../messages/${locale}/${sections[i]}.json`)).default,
+        ...(await import(`../messages/${locale}/${sections[i]}.json`)).default
       };
 
       temp.fallback = {
         ...temp.fallback,
-        ...(await import(`../messages/pt-BR/${sections[i]}.json`)).default,
+        ...(await import(`../messages/pt-BR/${sections[i]}.json`)).default
       };
       // eslint-disable-next-line @typescript-eslint/no-unused-vars
     } catch (error) {
@@ -43,6 +35,6 @@ export default getRequestConfig(async ({ locale }) => {
     | undefined;
 
   return {
-    messages,
+    messages
   };
 });

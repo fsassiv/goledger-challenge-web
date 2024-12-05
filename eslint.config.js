@@ -19,19 +19,24 @@ module.exports = [
       prettier: prettierPlugin,
     },
     rules: {
-      // TypeScript recommended rules
       ...typescriptPlugin.configs.recommended.rules,
-      // Prettier recommended rules
       ...prettierPlugin.configs.recommended.rules,
-
       // Custom rules
+      "jsx-quotes": [1, "prefer-single"],
       "@typescript-eslint/interface-name-prefix": "off",
       "@typescript-eslint/explicit-function-return-type": "off",
       "@typescript-eslint/explicit-module-boundary-types": "off",
       "@typescript-eslint/no-explicit-any": "off",
-      "prettier/prettier": "error", // Enforce Prettier formatting as errors
       "@typescript-eslint/no-require-imports": "off",
+      "prettier/prettier": [
+        "error",
+        {
+          singleQuote: true,
+          semi: true,
+          trailingComma: "none",
+        },
+      ],
     },
-    ignores: [".eslintrc.js"], // Ignore patterns in the new format
+    ignores: [".eslintrc.js"],
   },
 ];
