@@ -1,7 +1,9 @@
+import { DetailsCard } from '@/components';
 import { Page } from '@/components/page';
 import { API_ENDPOINTS, appAxios } from '@/config';
 import { SearchReturnTypes } from '@/types/schema';
-import { apiHandleRequest, capitalize } from '@/utils';
+import { apiHandleRequest } from '@/utils';
+import { notFound } from 'next/navigation';
 import { ItemPropTypes } from './types';
 
 export default async function ItemPage({ params }: ItemPropTypes) {
@@ -15,15 +17,12 @@ export default async function ItemPage({ params }: ItemPropTypes) {
     })
   );
 
-  if (error) throw new Error(error.message);
+  if (error || !data.result.length) notFound();
 
-  const { '@assetType': assetType, name } = data?.result[0];
-
-  // console.log(songs);
   return (
     <Page>
       <div className="container">
-        {capitalize(assetType)} - {name}
+        <DetailsCard item={data?.result[0]} />
       </div>
     </Page>
   );

@@ -15,7 +15,7 @@ export default async function SearchPage({ params }: SearchPagePropTypes) {
       };
 
     return {
-      name: slug[0],
+      name: decodeURIComponent(slug[0]),
     };
   };
 

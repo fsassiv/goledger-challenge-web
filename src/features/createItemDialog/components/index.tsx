@@ -41,6 +41,7 @@ export const CreateItemDialog = () => {
 
     setOpen(false);
 
+    // @ts-expect-error non mapped prop
     if (error?.code === 'ECONNABORTED') {
       toast({
         variant: 'default',

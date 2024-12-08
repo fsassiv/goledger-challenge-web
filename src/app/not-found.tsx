@@ -10,7 +10,7 @@ export default function NotFound() {
   return (
     <div className="flex justify-center pt-10">
       <div className="flex flex-col justify-evenly lg:justify-center items-center container">
-        <h2 className="text-center text-[30px] lg:text-[40px] font-bold text-primary mb-4">
+        <h2 className="text-orange-500 text-center text-[30px] lg:text-[40px] font-bold mb-4">
           Not found
         </h2>
 
