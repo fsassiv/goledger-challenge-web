@@ -1,3 +1,5 @@
+import { SchemBaseTypes } from '@/types/schema';
+
 export const apiHandleRequest = <T>(
   promise: Promise<{ data: T; resposne: { data: T } }>
 ): Promise<[undefined, T, any] | [Error]> =>
@@ -11,3 +13,9 @@ export const apiHandleRequest = <T>(
 
 export const capitalize = (text: string) =>
   text.charAt(0).toUpperCase() + text.slice(1);
+
+export const AssetTypes = ['album', 'artist', 'playlist', 'song'];
+
+export const sortListByName = (data: SchemBaseTypes[]) => {
+  return data.sort((a, b) => (a.name > b.name ? 1 : b.name > a.name ? -1 : 0));
+};

@@ -2,9 +2,8 @@ import { Page } from '@/components/page';
 import { ResultCard } from '@/components/resultCard';
 import { API_ENDPOINTS, appAxios } from '@/config';
 import { SchemBaseTypes, SearchReturnTypes } from '@/types/schema';
-import { apiHandleRequest } from '@/utils';
+import { apiHandleRequest, AssetTypes, sortListByName } from '@/utils';
 import { SearchPagePropTypes } from './types';
-import { AssetTypes } from './utils';
 
 export default async function SearchPage({ params }: SearchPagePropTypes) {
   const { slug } = params;
@@ -31,7 +30,7 @@ export default async function SearchPage({ params }: SearchPagePropTypes) {
   if (error) throw new Error(error.message);
 
   const renderResultCards = () =>
-    data?.result?.map((item: SchemBaseTypes) => (
+    sortListByName(data?.result)?.map((item: SchemBaseTypes) => (
       <ResultCard item={item} key={item['@key']} />
     ));
 

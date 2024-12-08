@@ -37,7 +37,7 @@ export const SearchBar: FC = () => {
     <Form {...form}>
       <form
         onSubmit={form.handleSubmit(onSubmit)}
-        className="space-y-8 md:max-w-[25vw]"
+        className="space-y-8 w-full md:max-w-[25vw]"
       >
         <FormField
           control={form.control}

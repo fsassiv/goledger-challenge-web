@@ -1,5 +1,5 @@
-import { Header } from '@/features/header';
-import { SideBar } from '@/features/sidebar';
+import { Toaster } from '@/components/ui/toaster';
+import { Header, SideBar } from '@/features';
 import type { Metadata } from 'next';
 import localFont from 'next/font/local';
 import './globals.css';
@@ -31,10 +31,11 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} antialiased h-screen max-w-[100vw] overflow-x-hidden flex p-5 bg-neutral-950`}
       >
         <SideBar />
-        <main className="w-full">
+        <main className="w-full max-h-[100vh] overflow-auto">
           <Header />
           {children}
         </main>
+        <Toaster />
       </body>
     </html>
   );
