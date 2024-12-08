@@ -1,4 +1,3 @@
-// eslint.config.js
 const typescriptPlugin = require("@typescript-eslint/eslint-plugin");
 const typescriptParser = require("@typescript-eslint/parser");
 const prettierPlugin = require("eslint-plugin-prettier");
