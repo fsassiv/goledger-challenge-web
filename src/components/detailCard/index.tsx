@@ -1,5 +1,6 @@
 'use client';
 import { API_ENDPOINTS, appAxios } from '@/config';
+import { useDialogContext } from '@/context/dialogs';
 import { SchemBaseTypes } from '@/types/schema';
 import { apiHandleRequest, capitalize } from '@/utils';
 import { useRouter } from 'next/navigation';
@@ -17,6 +18,8 @@ export const DetailsCard: FC<{
   item: SchemBaseTypes;
 }> = ({ item }) => {
   const { push } = useRouter();
+
+  const { setUpdateDialogOpen } = useDialogContext();
 
   const {
     name,
@@ -46,9 +49,9 @@ export const DetailsCard: FC<{
   };
 
   return (
-    <Card className="mb-4 w-full md:w-[50%] md:mr-[1%] bg-neutral-800 border-0 flex flex-col justify-between">
+    <Card className="mb-4 w-full md:w-[40%] md:mr-[1%] bg-neutral-800 border-0 flex flex-col justify-between">
       <CardHeader className="p-3">
-        <CardTitle>
+        <CardTitle className="text-neutral-400">
           {capitalize(assetType)}: {capitalize(name)}
         </CardTitle>
       </CardHeader>
@@ -71,6 +74,7 @@ export const DetailsCard: FC<{
           <Button
             variant="outline"
             className="bg-orange-500 border-0 text-white"
+            onClick={() => setUpdateDialogOpen(assetType)}
           >
             Edit
           </Button>

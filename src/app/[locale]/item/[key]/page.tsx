@@ -1,6 +1,7 @@
 import { DetailsCard } from '@/components';
 import { Page } from '@/components/page';
 import { API_ENDPOINTS, appAxios } from '@/config';
+import { UpdateItemDialog } from '@/features/updateItemDialog';
 import { SearchReturnTypes } from '@/types/schema';
 import { apiHandleRequest } from '@/utils';
 import { notFound } from 'next/navigation';
@@ -24,6 +25,7 @@ export default async function ItemPage({ params }: ItemPropTypes) {
       <div className="container">
         <DetailsCard item={data?.result[0]} />
       </div>
+      <UpdateItemDialog />
     </Page>
   );
 }

@@ -1,4 +1,4 @@
-import { CreateItemDialog } from '@/features/';
+import { CreateItemDialog } from '@/features';
 import { SearchBar } from './searchbar';
 
 export const Header = () => {

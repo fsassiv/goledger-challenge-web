@@ -22,3 +22,10 @@ export type SearchReturnTypes = {
   metadata: any;
   result: SchemBaseTypes[];
 };
+
+export enum SelectTypeEnum {
+  'album',
+  'artist',
+  'playlist',
+  'song',
+}
