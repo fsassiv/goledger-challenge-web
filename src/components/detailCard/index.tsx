@@ -74,7 +74,7 @@ export const DetailsCard: FC<{
           <Button
             variant="outline"
             className="bg-orange-500 border-0 text-white"
-            onClick={() => setUpdateDialogOpen(assetType)}
+            onClick={() => setUpdateDialogOpen()}
           >
             Edit
           </Button>

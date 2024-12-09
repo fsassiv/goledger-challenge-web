@@ -28,3 +28,5 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 
 - Devido ao prazo nao pude concluir o fluxo de update para Artist, Playlist e Song, porem segue o mesmo padrao aplicado UpdateAlbumForm e UpdateArtistForm
 - Responsividade tambem ficou pendente de ser aplicada
+
+[https://goledger-challenge-pn10rfc5d-flavios-projects-41b94dd9.vercel.app/](Versão em Produçao)
